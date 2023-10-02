@@ -1,0 +1,46 @@
+@include('components/_head.html')
+
+@include('components/_header.html')
+
+<main class="main">
+  <section class="form">
+    <div class="form__img form__img_1"></div>
+    <div class="form__img form__img_2"></div>
+    <div class="form__img form__img_3"></div>
+    <div class="form__img form__img_4"></div>
+    <div class="container">
+      <div class="form__inner">
+        <div class="form__title title">
+          Вам понравилось работать с ПРО-Сценой?
+        </div>
+        <div class="form__subtitle subtitle">
+          Дорогой заказчик, просим Вас поделиться впечатлениями о сотрудничестве
+        </div>
+        <ul class="form__list">
+          <li class="form__item">
+            <div class="form__left">
+              <div class="form__img-wrap">
+                <img class="form__img-item" src="images/smartphone.png" alt="smartphone.png" width="105" height="105">
+              </div>
+              <div class="form__left-content">
+                <div class="form__item-title subtitle">
+                  Идентификация
+                </div>
+                <label class="form__item-text" for="phone">
+                  Пожалуйста, введите Ваш номер телефона
+                </label>
+              </div>
+            </div>
+            <div class="form__right">
+              <input class="form__input" id="phone" type="text" placeholder="+7 888 777 66 55">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')

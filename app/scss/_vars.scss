@@ -1,0 +1,41 @@
+
+$default: var(--default-color);
+$white: var(--white-color);
+$red: var(--red-color);
+
+
+
+:root {
+  --default-color: #282828;
+  --white-color: #ffffff;
+  --red-color: #FF4A4A; 
+
+}
+
+
+
+$big-r: 1380;
+$desm-r: 1280;
+$tab-r: 1024;
+$mtab-r: 992;
+$stab-r: 768;
+$bmob-r: 576;
+
+
+
+
+@mixin adpt($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin adpt-mob($width) {
+  @media (min-width: #{$width}em) {
+    @content;
+  }
+}
+
+@include adpt ($bmob-r) {
+
+}

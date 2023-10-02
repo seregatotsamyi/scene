@@ -1,0 +1,105 @@
+.form {
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    background-position: center;
+
+    &_1 {
+      width: 5vw;
+      height: 9.7vw;
+      background-image: url('../images/decor/1.png');
+      top: 1.6vw;
+      left: 0;
+    }
+
+    &_2 {
+      background-image: url('../images/decor/2.png');
+      top: 0;
+      right: 0;
+      width: 11.8vw;
+      height: 15vw;
+    }
+  }
+
+  &__inner {
+    padding: 0 5.5vw;
+    position: relative;
+    z-index: 4;
+
+  }
+
+  &__title {
+    margin-bottom: 0.8vw;
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    padding-bottom: 2.6vw;
+    display: grid;
+    grid-template-columns: 24.8vw 1fr;
+    grid-gap: 6vw;
+    align-items: center;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #EEEEEE;
+    }
+  }
+
+  &__input {
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.1vw;
+    line-height: 1.5;
+    outline: none;
+    border-radius: 0px 0.9vw 0.9vw 0.9vw;
+    border: 2px solid #EEE;
+    padding: 1.3vw 1.8vw;
+    transition: border-color 0.3s;
+
+    &:focus,
+    &:active {
+      border-color: $default;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img-wrap {
+    border-radius: 0px 30vw 30vw 30vw;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.9vw;
+    flex-shrink: 0;
+    height: 7.9vw;
+    margin-right: 2.4vw;
+    padding: 0.7vw;
+  }
+
+  &__img-item {
+    object-fit: contain;
+  }
+
+  &__item-title {
+    margin-bottom: 0.4vw;
+  }
+
+  &__item-text {
+    font-size: 1.25vw;
+    line-height: 1.35;
+  }
+}

@@ -1,0 +1,54 @@
+.footer {
+  position: relative;
+  margin-top: auto;
+  padding: 2.6vw 0;
+
+  @include adpt ($tab-r) {
+    padding: 3vw 0;
+  }
+
+  @include adpt ($bmob-r) {
+    padding: 30px 0 20px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include adpt ($tab-r) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 1.5vw;
+
+      @include adpt ($tab-r) {
+        margin-right: 0;
+        margin-bottom: 1.8vw;
+      }
+
+      @include adpt ($bmob-r) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @include adpt ($tab-r) {
+      font-size: 1.7vw;
+    }
+
+    @include adpt ($bmob-r) {
+      font-size: 22px;
+    }
+  }
+}
