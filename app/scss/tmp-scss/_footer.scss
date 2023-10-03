@@ -5,10 +5,11 @@
 
   @include adpt ($tab-r) {
     padding: 3vw 0;
+    padding-bottom: calc(3vw +  65px);
   }
 
   @include adpt ($bmob-r) {
-    padding: 30px 0 20px;
+    padding: 30px 0 90px;
   }
 
   &__list {

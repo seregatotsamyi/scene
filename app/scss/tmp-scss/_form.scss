@@ -9,6 +9,10 @@
     z-index: 1;
     background-position: center;
 
+    @include adpt ($bmob-r) {
+      display: none;
+    }
+
     &_1 {
       width: 5vw;
       height: 9.7vw;
@@ -31,27 +35,51 @@
     position: relative;
     z-index: 4;
 
+    @include adpt ($bmob-r) {
+      padding: 0;
+    }
+
   }
 
   &__title {
     margin-bottom: 0.8vw;
     text-align: center;
+
+    @include adpt ($bmob-r) {
+      margin-bottom: 10px;
+    }
   }
 
   &__subtitle {
     text-align: center;
     margin-bottom: 50px;
+
+    @include adpt ($bmob-r) {
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
-    padding-bottom: 2.6vw;
     display: grid;
     grid-template-columns: 24.8vw 1fr;
     grid-gap: 6vw;
     align-items: center;
 
-    &:not(:last-child) {
-      border-bottom: 1px solid #EEEEEE;
+    @include adpt ($bmob-r) {
+      grid-template-columns: 1fr;
+      grid-gap: 25px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 2.6vw;
+      padding-top: 2.6vw;
+      border-top: 1px solid #EEEEEE;
+
+      @include adpt ($bmob-r) {
+        padding-top: 25px;
+        margin-top: 25px;
+      }
+
     }
   }
 
@@ -66,15 +94,27 @@
     padding: 1.3vw 1.8vw;
     transition: border-color 0.3s;
 
+    @include adpt ($bmob-r) {
+      font-size: 18px;
+      border-radius: 0px 10px 10px 10px;
+      padding: 19px 25px 18px;
+    }
+
     &:focus,
     &:active {
       border-color: $default;
+
     }
   }
 
   &__left {
     display: flex;
     align-items: center;
+
+    @include adpt ($bmob-r) {
+      width: 100%;
+      flex-direction: column;
+    }
   }
 
   &__img-wrap {
@@ -88,6 +128,23 @@
     height: 7.9vw;
     margin-right: 2.4vw;
     padding: 0.7vw;
+
+    @include adpt ($bmob-r) {
+      border-radius: 500px 0px 500px 500px;
+      width: 80px;
+      height: 80px;
+      margin-right: 0;
+      margin-bottom: 12px;
+      padding: 9px;
+    }
+
+    &._2 {
+      border-radius: 30vw 0px 30vw 30vw;
+
+      @include adpt ($bmob-r) {
+        border-radius: 500px 0px 500px 500px;
+      }
+    }
   }
 
   &__img-item {
@@ -96,10 +153,22 @@
 
   &__item-title {
     margin-bottom: 0.4vw;
+
+    @include adpt ($bmob-r) {
+      margin-bottom: 5px;
+      text-align: center;
+      font-size: 24px;
+    }
   }
 
   &__item-text {
     font-size: 1.25vw;
     line-height: 1.35;
+
+    @include adpt ($bmob-r) {
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: center;
+    }
   }
 }

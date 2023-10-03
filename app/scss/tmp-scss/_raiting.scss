@@ -1,0 +1,69 @@
+.raiting {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2vw;
+
+  &__text {
+    text-align: center;
+    color: #696969;
+    font-size: 0.85vw;
+    transition: color 0.3s;
+  }
+
+  &__img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 170/154;
+    height: auto;
+    margin-bottom: 1.2vw;
+    transition: transform 0.3s ease;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s;
+
+    &._gold {
+      opacity: 0;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__label {
+    cursor: pointer;
+
+    &._gold {
+      & .raiting__img._gold {
+        opacity: 1;
+      }
+
+    }
+
+    &._current {
+      & .raiting__text {
+        color: $default;
+      }
+    }
+
+    &:hover {
+      & .raiting__text {
+        color: $default;
+      }
+
+      & .raiting__img-wrap {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.footer-nav {
+  display: none;
+
+  @include adpt ($tab-r) {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: $white;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  &__option-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__option-item {
+    border: 1px solid rgba(196, 196, 196, 1);
+    border-radius: 20px 20px 0 20px;
+
+    &:not(:last-child) {
+      margin-right: 5px;
+      border-radius: 0 20px 20px 20px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-content: inherit;
+
+    &._active {
+      & .footer-nav__btn-icon {
+        opacity: 0;
+      }
+
+      & .footer-nav__btn-icon-close {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+  }
+
+  &__btn-icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
