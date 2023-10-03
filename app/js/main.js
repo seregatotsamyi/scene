@@ -11,20 +11,42 @@ window.onload = function () {
     ratingBtns[i].classList.add('_current')
 
     for (let count = 0; count <= i; count++) {
-      let parent = ratingInputs[count].closest('.raiting__item')
-      parent.querySelector('.raiting__label').classList.add('_gold')
+      ratingBtns[count].classList.add('_gold')
     }
-    showAllForm(i + 1)
+
+    showAllForm(document.querySelector('input[name="raiting"]:checked').value)
   }
 
-  ratingBtns.forEach((item, i) => {
-    item.addEventListener('click', () => changeRating(i))
+  ratingInputs.forEach((item, i) => {
+    item.addEventListener('change', () => changeRating(i))
   })
   //rating
 
+
+  //new-project
+
+  let newProjectInputs = document.querySelectorAll('.new-project__input')
+  let newProjectLabels = document.querySelectorAll('.new-project__label')
+
+  let updateProjectValue = (i) => {
+    newProjectLabels.forEach((item) => item.classList.remove('_checked'))
+    newProjectLabels[i].classList.add('_checked')
+  }
+
+  newProjectInputs.forEach((item, i) => {
+    item.addEventListener('click', () => updateProjectValue(i))
+  })
+
+  //new-project
+
+
+  //logic form
   let showAllForm = (value) => {
     console.log("Показываю форму " + value)
   }
+  //logic form
+
+
 
 };
 

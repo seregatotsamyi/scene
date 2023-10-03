@@ -59,6 +59,9 @@ body {
   @include adpt ($tab-r) {
     padding-top: 2.5vw;
   }
+  @include adpt ($bmob-r){
+    padding-top: 0;
+  }
 }
 
 .btn {
