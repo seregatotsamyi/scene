@@ -1,0 +1,37 @@
+.mob-menu {
+  display: none;
+
+  @include adpt ($tab-r) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    color: $default;
+    padding: 25px 30px;
+    padding-bottom: 85px;
+    display: block;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    overflow-y: auto;
+
+    &._open {
+      transform: translate(0);
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+      display: block;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}

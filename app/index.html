@@ -95,7 +95,7 @@
     <div class="form__img form__img_3"></div>
     <div class="form__img form__img_4"></div>
     <div class="container">
-      <form class="form__inner">
+      <form class="form__inner" id="form">
         <div class="form__title title">
           Вам понравилось работать с ПРО-Сценой?
         </div>
@@ -103,204 +103,219 @@
           Дорогой заказчик, просим Вас поделиться впечатлениями о сотрудничестве
         </div>
         <ul class="form__list">
-          <li class="form__item">
-            <div class="form__left">
-              <div class="form__img-wrap">
-                <img class="form__img-item" src="images/smartphone.png" alt="smartphone.png" width="105" height="105">
-              </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Идентификация
+          <li class="form__item-wrap form__item_start">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap">
+                  <img class="form__img-item" src="images/smartphone.png" alt="smartphone.png" width="105" height="105">
                 </div>
-                <label class="form__item-text" for="phone">
-                  Пожалуйста, введите Ваш номер телефона
-                </label>
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Идентификация
+                  </div>
+                  <label class="form__item-text" for="phone">
+                    Пожалуйста, введите Ваш номер телефона
+                  </label>
+                </div>
+              </div>
+              <div class="form__right">
+                <input class="form__input tel" name="phone" id="phone" type="text" placeholder="+7 888 777 66 55">
               </div>
             </div>
-            <div class="form__right">
-              <input class="form__input" id="phone" type="text" placeholder="+7 888 777 66 55">
+
+          </li>
+          <li class="form__item-wrap form__item_start">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap _2">
+                  <img class="form__img-item" src="images/thumb-up-hand.png" alt="thumb-up-hand.png" width="105"
+                    height="105">
+                </div>
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Оценка
+                  </div>
+                  <div class="form__item-text">
+                    Оцените общее впечатление от работы с ПРО-Сценой. Средняя оценка 4,3.
+                  </div>
+                </div>
+              </div>
+              <div class="form__right">
+                <div class="raiting">
+                  <div class="raiting__item">
+                    <label class="raiting__label" for="raiting1">
+                      <div class="raiting__img-wrap">
+                        <img class="raiting__img" src="images/heartblack.png" alt="heartblack.png">
+                        <img class="raiting__img _gold" src="images/heart_gold.png" alt="heart_gold.png">
+                      </div>
+                      <div class="raiting__text">
+                        Ужасно
+                      </div>
+                    </label>
+
+                    <input class="raiting__input" id="raiting1" type="radio" name="raiting" value="1">
+                  </div>
+                  <div class="raiting__item">
+                    <label class="raiting__label" for="raiting2">
+                      <div class="raiting__img-wrap">
+                        <img class="raiting__img" src="images/heartblack.png" alt="heartblack.png">
+                        <img class="raiting__img _gold" src="images/heart_gold.png" alt="heart_gold.png">
+                      </div>
+                      <div class="raiting__text">
+                        Плохо
+                      </div>
+                    </label>
+
+                    <input class="raiting__input" id="raiting2" type="radio" name="raiting" value="2">
+                  </div>
+                  <div class="raiting__item">
+                    <label class="raiting__label" for="raiting3">
+                      <div class="raiting__img-wrap">
+                        <img class="raiting__img" src="images/heartblack.png" alt="heartblack.png">
+                        <img class="raiting__img _gold" src="images/heart_gold.png" alt="heart_gold.png">
+                      </div>
+                      <div class="raiting__text">
+                        Не понравилось
+                      </div>
+                    </label>
+
+                    <input class="raiting__input" id="raiting3" type="radio" name="raiting" value="3">
+                  </div>
+                  <div class="raiting__item">
+                    <label class="raiting__label" for="raiting4">
+                      <div class="raiting__img-wrap">
+                        <img class="raiting__img" src="images/heartblack.png" alt="heartblack.png">
+                        <img class="raiting__img _gold" src="images/heart_gold.png" alt="heart_gold.png">
+                      </div>
+                      <div class="raiting__text">
+                        Хорошо
+                      </div>
+                    </label>
+
+                    <input class="raiting__input" id="raiting4" type="radio" name="raiting" value="4">
+                  </div>
+                  <div class="raiting__item">
+                    <label class="raiting__label" for="raiting5">
+                      <div class="raiting__img-wrap">
+                        <img class="raiting__img" src="images/heartblack.png" alt="heartblack.png">
+                        <img class="raiting__img _gold" src="images/heart_gold.png" alt="heart_gold.png">
+                      </div>
+                      <div class="raiting__text">
+                        Отлично
+                      </div>
+                    </label>
+
+                    <input class="raiting__input" id="raiting5" type="radio" name="raiting" value="5">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="form__item-wrap _hide" data-option="nice">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap _3">
+                  <img class="form__img-item" src="images/one-simple-emoji.png" alt="one-simple-emoji.png" width="115"
+                    height="115">
+                </div>
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Всем довольны
+                  </div>
+                  <label class="form__item-text" for="reviews">
+                    Расскажите, что именно Вам понравилось?
+                  </label>
+                </div>
+              </div>
+              <div class="form__right">
+                <textarea class="form__input _textarea" id="reviews" name="reviews" type="text"
+                  placeholder="Комментарий"></textarea>
+              </div>
             </div>
           </li>
-          <li class="form__item">
-            <div class="form__left">
-              <div class="form__img-wrap _2">
-                <img class="form__img-item" src="images/thumb-up-hand.png" alt="thumb-up-hand.png" width="105"
-                  height="105">
+          <li class="form__item-wrap _hide" data-option="bed">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap _3">
+                  <img class="form__img-item" src="images/one_cry_sad1.png" alt="one_cry_sad1.png" width="105"
+                    height="105">
+                </div>
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Проблемы
+                  </div>
+                  <label class="form__item-text" for="reviews-bad">
+                    Расскажите, что именно Вам не понравилось?
+                  </label>
+                </div>
               </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Оценка
-                </div>
-                <div class="form__item-text">
-                  Оцените общее впечатление от работы с ПРО-Сценой. Средняя оценка 4,3.
-                </div>
+              <div class="form__right">
+                <textarea class="form__input _textarea" id="reviews-bad" name="reviews-bad" type="text"
+                  placeholder="Все плохо"></textarea>
               </div>
             </div>
-            <div class="form__right">
-              <div class="raiting">
-                <div class="raiting__item">
-                  <label class="raiting__label" for="raiting1">
-                    <div class="raiting__img-wrap">
-                      <img class="raiting__img" src="images/heartblack.svg" alt="heartblack.svg">
-                      <img class="raiting__img _gold" src="images/heart_gold.svg" alt="heart_gold.svg">
-                    </div>
-                    <div class="raiting__text">
-                      Ужасно
-                    </div>
-                  </label>
 
-                  <input class="raiting__input" id="raiting1" type="radio" name="raiting" value="1">
+          </li>
+          <li class="form__item-wrap _hide _end-anim-1 _end-anim">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap _4">
+                  <img class="form__img-item" src="images/small-message-bubble.png" alt="small-message-bubble.png"
+                    width="115" height="115">
                 </div>
-                <div class="raiting__item">
-                  <label class="raiting__label" for="raiting2">
-                    <div class="raiting__img-wrap">
-                      <img class="raiting__img" src="images/heartblack.svg" alt="heartblack.svg">
-                      <img class="raiting__img _gold" src="images/heart_gold.svg" alt="heart_gold.svg">
-                    </div>
-                    <div class="raiting__text">
-                      Плохо
-                    </div>
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Пожелания
+                  </div>
+                  <label class="form__item-text" for="wishes">
+                    Расскажите, что нам стоит улучшить в работе?
                   </label>
-
-                  <input class="raiting__input" id="raiting2" type="radio" name="raiting" value="2">
                 </div>
-                <div class="raiting__item">
-                  <label class="raiting__label" for="raiting3">
-                    <div class="raiting__img-wrap">
-                      <img class="raiting__img" src="images/heartblack.svg" alt="heartblack.svg">
-                      <img class="raiting__img _gold" src="images/heart_gold.svg" alt="heart_gold.svg">
-                    </div>
-                    <div class="raiting__text">
-                      Не понравилось
-                    </div>
-                  </label>
-
-                  <input class="raiting__input" id="raiting3" type="radio" name="raiting" value="3">
-                </div>
-                <div class="raiting__item">
-                  <label class="raiting__label" for="raiting4">
-                    <div class="raiting__img-wrap">
-                      <img class="raiting__img" src="images/heartblack.svg" alt="heartblack.svg">
-                      <img class="raiting__img _gold" src="images/heart_gold.svg" alt="heart_gold.svg">
-                    </div>
-                    <div class="raiting__text">
-                      Хорошо
-                    </div>
-                  </label>
-
-                  <input class="raiting__input" id="raiting4" type="radio" name="raiting" value="4">
-                </div>
-                <div class="raiting__item">
-                  <label class="raiting__label" for="raiting5">
-                    <div class="raiting__img-wrap">
-                      <img class="raiting__img" src="images/heartblack.svg" alt="heartblack.svg">
-                      <img class="raiting__img _gold" src="images/heart_gold.svg" alt="heart_gold.svg">
-                    </div>
-                    <div class="raiting__text">
-                      Отлично
-                    </div>
-                  </label>
-
-                  <input class="raiting__input" id="raiting5" type="radio" name="raiting" value="5">
-                </div>
+              </div>
+              <div class="form__right">
+                <textarea class="form__input _textarea" id="wishes" name="wishes" type="text"
+                  placeholder="Комментарий"></textarea>
               </div>
             </div>
           </li>
-          <li class="form__item" data-option="nice">
-            <div class="form__left">
-              <div class="form__img-wrap _3">
-                <img class="form__img-item" src="images/one-simple-emoji.png" alt="one-simple-emoji.png" width="115"
-                  height="115">
-              </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Всем довольны
+          <li class="form__item-wrap _hide _end-anim-2 _end-anim">
+            <div class="form__item">
+              <div class="form__left">
+                <div class="form__img-wrap">
+                  <img class="form__img-item" src="images/tiny-cute-smooth.png" alt="tiny-cute-smooth.png" width="110"
+                    height="110">
                 </div>
-                <label class="form__item-text" for="reviews">
-                  Расскажите, что именно Вам понравилось?
-                </label>
-              </div>
-            </div>
-            <div class="form__right">
-              <textarea class="form__input _textarea" id="reviews" name="reviews" type="text"
-                placeholder="Комментарий"></textarea>
-            </div>
-          </li>
-          <li class="form__item" data-option="bed">
-            <div class="form__left">
-              <div class="form__img-wrap _3">
-                <img class="form__img-item" src="images/one_cry_sad1.png" alt="one_cry_sad1.png" width="105"
-                  height="105">
-              </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Проблемы
-                </div>
-                <label class="form__item-text" for="reviews-bad">
-                  Расскажите, что именно Вам не понравилось?
-                </label>
-              </div>
-            </div>
-            <div class="form__right">
-              <textarea class="form__input _textarea" id="reviews-bad" name="reviews-bad" type="text"
-                placeholder="Все плохо"></textarea>
-            </div>
-          </li>
-          <li class="form__item" data-option="nice">
-            <div class="form__left">
-              <div class="form__img-wrap _4">
-                <img class="form__img-item" src="images/small-message-bubble.png" alt="small-message-bubble.png"
-                  width="115" height="115">
-              </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Пожелания
-                </div>
-                <label class="form__item-text" for="wishes">
-                  Расскажите, что нам стоит улучшить в работе?
-                </label>
-              </div>
-            </div>
-            <div class="form__right">
-              <textarea class="form__input _textarea" id="wishes" name="wishes" type="text"
-                placeholder="Комментарий"></textarea>
-            </div>
-          </li>
-          <li class="form__item">
-            <div class="form__left">
-              <div class="form__img-wrap">
-                <img class="form__img-item" src="images/tiny-cute-smooth.png" alt="tiny-cute-smooth.png" width="110"
-                  height="110">
-              </div>
-              <div class="form__left-content">
-                <div class="form__item-title subtitle">
-                  Новые проекты
-                </div>
-                <div class="form__item-text">
-                  Планируете ли Вы в ближайшем будущем приобретение конструкций или оборудования?
+                <div class="form__left-content">
+                  <div class="form__item-title subtitle">
+                    Новые проекты
+                  </div>
+                  <div class="form__item-text">
+                    Планируете ли Вы в ближайшем будущем приобретение конструкций или оборудования?
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form__right">
-              <div class="new-project">
-                <div class="new-project__item">
-                  <label class="new-project__label" for="new-project-1">
-                    Да
-                  </label>
-                  <input class="new-project__input" type="radio" id="new-project-1" name="new-project" value="yes">
+              <div class="form__right">
+                <div class="new-project">
+                  <div class="new-project__item">
+                    <label class="new-project__label" for="new-project-1">
+                      Да
+                    </label>
+                    <input class="new-project__input" type="radio" id="new-project-1" name="new-project" value="yes">
+                  </div>
+                  <div class="new-project__item">
+                    <label class="new-project__label" for="new-project-2">
+                      Нет
+                    </label>
+                    <input class="new-project__input" type="radio" id="new-project-2" name="new-project" value="no">
+                  </div>
                 </div>
-                <div class="new-project__item">
-                  <label class="new-project__label" for="new-project-2">
-                    Нет
-                  </label>
-                  <input class="new-project__input" type="radio" id="new-project-2" name="new-project" value="no">
-                </div>
-              </div>
 
+              </div>
             </div>
           </li>
         </ul>
-        <button class="form__btn" type="button">
+        <button class="form__btn" type="submit">
           <span>Оставить отзыв</span>
           <div class="form__btn-img-wrap">
             <img class="form__btn-img" src="images/icon/small-simple-star.png" alt="small-simple-star.png" width="84"
@@ -371,13 +386,13 @@
   </a>
   <ul class="footer-nav__option-list">
     <li class="footer-nav__option-item">
-      <button class="footer-nav__btn" type="submit">
+      <button class="footer-nav__btn" type="button">
         <img class="footer-nav__btn-icon" src="images/icon/Union.svg" alt="Union.svg" width="15" height="23">
         <img class="footer-nav__btn-icon-close" src="images/icon/close.svg" alt="close.svg" width="13" height="13">
       </button>
     </li>
     <li class="footer-nav__option-item">
-      <button class="footer-nav__btn" type="submit">
+      <button class="footer-nav__btn" id="toggle-menu" type="button">
         <img class="footer-nav__btn-icon" src="images/icon/burger.svg" alt="burger.svg" width="17" height="9">
         <img class="footer-nav__btn-icon-close" src="images/icon/close.svg" alt="close.svg" width="13" height="13">
       </button>
@@ -385,10 +400,114 @@
   </ul>
 </div>
 
+<div class="mob-menu" id="mobMenu">
+  <ul class="mob-menu__list">
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Сцены
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Подиумы
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Трибуны
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Одежда
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Механика
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Фермы
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Фермовые конструкции
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Свет
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Звук
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Комплексное оснащение
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Строительство
+      </a>
+    </li>
+    <li class="mob-menu__item">
+      <a class="mob-menu__link" href="#">
+        Проектирование
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  window.addEventListener('load', function () {
+    [].forEach.call(document.querySelectorAll('.tel'), function (input) {
+      var keyCode;
+
+      function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 ___ ___ __ __",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, ""),
+          new_value = matrix.replace(/[_\d]/g, function (a) {
+            return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+          });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+          i < 4 && (i = 3);
+          new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+          function (a) {
+            return "\\d{1," + a.length + "}"
+          }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5) this.value = ""
+      }
+      input.addEventListener("input", mask, false);
+      input.addEventListener("focus", mask, false);
+      input.addEventListener("blur", mask, false);
+      input.addEventListener("keydown", mask, false)
+
+    });
+  })
+</script>
+
 <script src="libs/jquery.min.js"></script>
 <script src="libs/anime.min.js"></script>
-<script src="js/main.min.js"></script>
-<script src="js/anim.js"></script>
+<script src="js/anim.js" type="module"></script>
+<script src="js/main.js" type="module"></script>
 </body>
 
 </html>

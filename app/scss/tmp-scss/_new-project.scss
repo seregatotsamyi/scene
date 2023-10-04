@@ -34,6 +34,11 @@
       padding: 19px 25px 18px;
     }
 
+    &._error {
+      color: #FF4A4A;
+      border-color: #FFEAEA;
+    }
+
     &._checked {
       border-color: #C4C4C4;
       color: $default;

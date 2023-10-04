@@ -59,7 +59,8 @@ body {
   @include adpt ($tab-r) {
     padding-top: 2.5vw;
   }
-  @include adpt ($bmob-r){
+
+  @include adpt ($bmob-r) {
     padding-top: 0;
   }
 }
@@ -95,4 +96,8 @@ body {
     line-height: 1.4;
     letter-spacing: normal;
   }
+}
+
+._fixed {
+  overflow: hidden;
 }

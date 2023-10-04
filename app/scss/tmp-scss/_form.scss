@@ -1,6 +1,5 @@
 .form {
   position: relative;
-  overflow: hidden;
 
   &__img {
     position: absolute;
@@ -65,7 +64,7 @@
     position: relative;
     margin-bottom: 0.8vw;
     text-align: center;
- 
+
     @include adpt ($bmob-r) {
       margin-bottom: 10px;
     }
@@ -80,15 +79,9 @@
     }
   }
 
-  &__item {
-    display: grid;
-    grid-template-columns: 24.8vw 1fr;
-    grid-gap: 6vw;
-    align-items: center;
-
-    @include adpt ($bmob-r) {
-      grid-template-columns: 1fr;
-      grid-gap: 25px;
+  &__item-wrap {
+    &._hide {
+      display: none;
     }
 
     &:not(:first-child) {
@@ -104,6 +97,19 @@
     }
   }
 
+  &__item {
+    display: grid;
+    grid-template-columns: 24.8vw 1fr;
+    grid-gap: 6vw;
+    align-items: center;
+
+    @include adpt ($bmob-r) {
+      grid-template-columns: 1fr;
+      grid-gap: 25px;
+    }
+
+  }
+
   &__input {
     max-width: 100%;
     width: 100%;
@@ -113,7 +119,7 @@
     border-radius: 0px 0.9vw 0.9vw 0.9vw;
     border: 2px solid #EEE;
     padding: 1.3vw 1.8vw;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, color 0.3s;
 
     @include adpt ($bmob-r) {
       font-size: 18px;
@@ -128,6 +134,15 @@
       @include adpt ($bmob-r) {
         min-height: 200px;
       }
+    }
+
+    &._error {
+      color: #FF4A4A;
+      border-color: #FFEAEA;
+    }
+
+    &._complete {
+      border-color: $default;
     }
 
     &:focus,
@@ -231,7 +246,8 @@
     line-height: 1.5;
     color: #696969;
     margin-top: 3.5vw;
-    pointer-events: none;
+    display: none;
+    transition: background-color 0.3s, color 0.3s;
 
     @include adpt ($bmob-r) {
       left: 0;
@@ -244,6 +260,18 @@
       width: 100%;
     }
 
+    &._active {
+      background-color: $default;
+      color: $white;
+
+      & .form__btn-img {
+        opacity: 0;
+
+        &._a {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   &__btn-img-wrap {
