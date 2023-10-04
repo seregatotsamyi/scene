@@ -83,8 +83,8 @@ window.onload = function () {
         phoneInput.classList.remove('_error')
         phoneInput.classList.add('_complete')
       }
-
       showAllForm()
+
     } else {
       valueObj.phone = false
       if (option) {
@@ -168,24 +168,37 @@ window.onload = function () {
 
   //logic form
 
-  phoneInput.addEventListener('change', () => {
-    validatePhone(phoneInput.value, true)
-    validateAll(false)
-  })
-  reviewInput.addEventListener('change', () => {
-    validateReview(reviewInput.value, reviewInput, true)
-    validateAll(false)
-  })
-  reviewBadInput.addEventListener('change', () => {
-    validateReview(reviewBadInput.value, reviewBadInput, true)
-    validateAll(false)
-  })
-  wishesInput.addEventListener('change', () => {
-    validateWishes(wishesInput.value, true)
-    validateAll(false)
-  })
+  if (phoneInput) {
+    phoneInput.addEventListener('input', () => {
+      validatePhone(phoneInput.value, true)
+      validateAll(false)
+    })
+  }
+
+  if (reviewInput) {
+    reviewInput.addEventListener('change', () => {
+      validateReview(reviewInput.value, reviewInput, true)
+      validateAll(false)
+    })
+  }
+
+  if (reviewBadInput) {
+    reviewBadInput.addEventListener('change', () => {
+      validateReview(reviewBadInput.value, reviewBadInput, true)
+      validateAll(false)
+    })
+  }
+
+  if (wishesInput) {
+    wishesInput.addEventListener('change', () => {
+      validateWishes(wishesInput.value, true)
+      validateAll(false)
+    })
+  }
+
 
   let showAllForm = () => {
+
     if (valueObj.phone && valueObj.rating && !valueObj.showAll) {
       valueObj.showAll = true
       valueObj.ratingOld = valueObj.rating
@@ -229,7 +242,17 @@ window.onload = function () {
     let formData = $(this).serialize();
 
     if (validateAll(true)) {
-      alert("Отправка")
+      alert("Отправка успешна")
+      if (valueObj.rating > 3) {
+        let reviews = reviewInput.value
+        let phoneV = phoneInput.value
+        localStorage.setItem("reviews_ls", reviews)
+        localStorage.setItem("phone_ls", phoneV)
+        document.location.href = '/thank.html';
+      } else {
+        document.location.href = '/thank-two.html';
+      }
+
     } else {
       alert('Валидация')
     }
@@ -286,9 +309,3 @@ window.onload = function () {
 
 
 };
-
-
-$(function () {
-  let width = $(window).width();
-
-});

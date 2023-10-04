@@ -1,0 +1,84 @@
+@include('components/_head.html')
+
+@include('components/_header.html')
+
+<main class="main">
+  <section class="thank">
+    <div class="container">
+      <div class="thank__inner">
+        <div class="thank__left">
+          <div class="thank__title title">
+            Отлично! Мы получили Ваш отзыв и обязательно учтем его в работе.
+          </div>
+          <div class="thank__text">
+            Пожалуйста, разместите его в Яндексе. А если прикрепите фото — мы пришлем Вам 500р на счет мобильного
+            телефона.
+          </div>
+          <div class="thank__reviews">
+            <p id="reviewsInner">Спасибо ПРО-сцена за оперативную и качественную работу. Наш заказ на подиум выполнили
+              быстро и качественно, огромное спасибо, можно мобильно и быстро его перевезти, собрать и разобрать, что
+              нас очень порадовало, нам не пришлось привлекать сторонних работников, мы довольны и рекомендуем
+              поставщика, а еще они улаз на подиум выполнили быстро и качественно, огромное спасибо, можно мобильно и
+              быстро его перевезти, собрать и разобрать, что нас очень порадовало, нам не пришлось привлекать сторонних
+              работников, мы довольны и рекомендуем поставщика, а еще они ул</p>
+          </div>
+          <div class="thank__btn-wrap">
+            <button class="thank__btn-copy" type="submit" onclick="copytext('#reviewsInner')">
+              <span>Скопировать отзыв </span>
+              <img class="thank__btn-copy-img thank__btn-copy-img_1" src="images/paper-clip.png" alt="alt">
+              <img class="thank__btn-copy-img thank__btn-copy-img_2" src="images/paper-clip2.png" alt="alt">
+            </button>
+            <a class="thank__btn-link"
+              href="https://yandex.ru/maps/org/pro_stsena/161666817213/reviews/?ll=44.057576%2C56.373016&z=17"
+              target="_blank">
+              <span>
+                Перейти в Яндекс
+              </span>
+              <img class="thank__btn-link-img thank__btn-link-img_1" src="images/arrow-pointer.png" alt="alt">
+              <img class="thank__btn-link-img thank__btn-link-img_2" src="images/arrow-pointer2.png" alt="alt">
+            </a>
+          </div>
+        </div>
+        <div class="thank__animation">
+          <div class="thank__animation-inner">
+            <img class="thank__anim-img _1" src="images/decor/t1.svg" alt="svg">
+            <img class="thank__anim-img _2" src="images/decor/t2.svg" alt="svg">
+            <img class="thank__anim-img _3" src="images/decor/t3.svg" alt="svg">
+            <img class="thank__anim-img _4" src="images/decor/t4.png" alt="png">
+            <img class="thank__anim-img _5" src="images/decor/t5.png" alt="png">
+            <img class="thank__anim-img _6" src="images/decor/t6.png" alt="png">
+            <img class="thank__anim-img _7 _end-anim" src="images/decor/t7.png" alt="png">
+            <img class="thank__anim-img _8 _end-anim" src="images/decor/t8.png" alt="png">
+            <img class="thank__anim-img _9 _end-anim" src="images/decor/t9.png" alt="png">
+          </div>
+          <div class="thank__animation-mob">
+            <img src="images/decor/tmob.png" alt="tmob.png" width="330" height="326">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+@include('components/_footer.html')
+<script>
+  function copytext(el) {
+    var $tmp = $("<input>");
+    $("body").append($tmp);
+    $tmp.val($(el).text()).select();
+    document.execCommand("copy");
+    $tmp.remove();
+    $('.thank__btn-copy').addClass('_hide')
+    $('.thank__btn-link').addClass('_active')
+  }
+  //copytext
+</script>
+<script src="libs/jquery.min.js"></script>
+<script src="libs/anime.min.js"></script>
+<script src="js/anim.js" type="module"></script>
+<script src="js/main.js" type="module"></script>
+<script src="js/thank.js" type="module"></script>
+
+</body>
+
+</html>

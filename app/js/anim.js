@@ -224,3 +224,124 @@ export let animationEnd = () => {
     });
   }
 }
+export let animationThank = () => {
+  "use strict";
+  const windowInnerWidth = window.innerWidth
+
+  if (windowInnerWidth > 576) {
+    let animBtn = anime({
+      targets: '.thank__btn-copy-img_1',
+      translateY: [-5, 5],
+      // easing: 'easeInOutExpo',
+      duration: 800,
+      loop: true,
+      dalay: 1500,
+      direction: 'alternate'
+    })
+    anime({
+      targets: '.thank__btn-link-img_2',
+      translateY: [-5, 5],
+      // easing: 'easeInOutExpo',
+      duration: 800,
+      loop: true,
+      dalay: 1500,
+      direction: 'alternate'
+    })
+    let animImg1 = anime({
+      targets: '.thank__anim-img._1',
+      opacity: [0, 1],
+      scale: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 1300,
+      delay: 500,
+    })
+    let animImg2 = anime({
+      targets: '.thank__anim-img._2',
+      opacity: [0, 1],
+      scale: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 1300,
+      delay: 500,
+    })
+    let animImg3 = anime({
+      targets: '.thank__anim-img._3',
+      opacity: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 1500,
+    })
+    let animImg4 = anime({
+      targets: '.thank__anim-img._4',
+      opacity: [0, 1],
+      translateY: [100, 0],
+      easing: 'easeInOutExpo',
+      duration: 1600,
+      delay: 1300 ,
+    })
+    let animImg5 = anime({
+      targets: '.thank__anim-img._5',
+      opacity: [0, 1],
+      translateY: [90, 0],
+      easing: 'easeInOutExpo',
+      duration: 1800,
+      delay: 1500 ,
+    })
+    let animImg6 = anime({
+      targets: '.thank__anim-img._6',
+      opacity: [0, 1],
+      translateY: [100, 0],
+      easing: 'easeInOutExpo',
+      duration: 1800,
+      delay: 2100 ,
+    })
+    let animImg7 = anime({
+      targets: '.thank__anim-img._end-anim',
+      opacity: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 1200,
+      delay: 2100 ,
+    })
+    let animText = anime({
+      targets: '.thank__title',
+      opacity: [0, 1],
+      translateY: [80, 0],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 3000 ,
+    })
+    let animText2 = anime({
+      targets: '.thank__text',
+      opacity: [0, 1],
+      translateY: [80, 0],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 3500 ,
+    })
+    anime({
+      targets: '.thank__reviews',
+      opacity: [0, 1],
+      translateY: [80, 0],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 4000 ,
+    })
+    anime({
+      targets: '.thank__btn-copy',
+      opacity: [0, 1],
+      translateY: [80, 0],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 4500 ,
+    })
+    anime({
+      targets: '.thank__btn-link',
+      opacity: [0, 1],
+      translateY: [80, 0],
+      easing: 'easeInOutExpo',
+      duration: 1000,
+      delay: 5000 ,
+    })
+
+
+  }
+}

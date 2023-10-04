@@ -1,0 +1,347 @@
+.thank {
+  padding: 3vw 1vw;
+
+  @include adpt ($bmob-r) {
+    padding: 28px 0;
+  }
+
+  &__animation {
+    flex: 1;
+    height: 100%;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 38vw 1fr;
+    grid-gap: 3vw;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    min-height: 42vw;
+
+    @include adpt ($bmob-r) {
+      grid-template-columns: 1fr;
+      grid-gap: 40px;
+      min-height: auto;
+    }
+  }
+
+  &__left {
+    &._2 {
+      max-width: 31vw;
+
+      @include adpt ($bmob-r) {
+        max-width: 100%;
+      }
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 1.8vw;
+
+    @include adpt ($bmob-r) {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 1.9vw;
+    line-height: 1.3;
+    letter-spacing: -0.19px;
+    margin-bottom: 2.2vw;
+
+    @include adpt ($bmob-r) {
+      font-size: 18px;
+      line-height: 1.4;
+      letter-spacing: normal;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  }
+
+  &__reviews {
+    font-size: 1.1vw;
+    line-height: 1.5;
+    border-radius: 0px 0.7vw 0.7vw 0.7vw;
+    border: 2px solid #EEE;
+    padding: 1.4vw 2vw;
+    margin-bottom: 1.8vw;
+
+    @include adpt ($bmob-r) {
+      font-size: 18px;
+      color: #696969;
+      border-radius: 0px 10px 10px 10px;
+      line-height: 1.35;
+      margin-bottom: 23px;
+      padding: 18px 25px;
+    }
+
+    & p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__btn-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+
+    @include adpt ($bmob-r) {
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+  }
+
+  &__btn-copy {
+    position: relative;
+    border-radius: 0px 0.7vw 0.7vw 0.7vw;
+    background-color: $default;
+    text-align: center;
+    padding: 1.2vw calc(2vw + 2.5vw) 1.3vw 2vw;
+    font-size: 1.1vw;
+    line-height: 1.5;
+    text-align: center;
+    color: $white;
+    transition: background-color 0.3s, color 0.3s;
+
+    @include adpt ($bmob-r) {
+
+      padding: 18px;
+      padding-bottom: 20px;
+      padding-right: 90px;
+      border-radius: 0px 10px 10px 10px;
+      font-size: 18px;
+      width: 100%;
+    }
+
+    &._hide {
+      background-color: #F5F5F5;
+      color: #858585;
+      pointer-events: none;
+
+      & .thank__btn-copy-img_2 {
+        opacity: 1;
+      }
+
+      & .thank__btn-copy-img_1 {
+        opacity: 0;
+      }
+    }
+
+    &._2 {
+      border-radius: 2vw;
+      min-width: 24vw;
+
+      @include adpt ($bmob-r) {
+        border-radius: 50px;
+      }
+
+      & img {
+        width: 3.5vw;
+        right: calc(50% - 6.5vw);
+
+        @include adpt ($bmob-r) {
+          width: 51px;
+          height: 54px;
+          right: calc(50% - 60px);
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  &__btn-copy-img {
+    position: absolute;
+    top: -0.6vw;
+    right: 2vw;
+    width: 2.5vw;
+    object-fit: contain;
+    height: 4vw;
+    transition: opacity 0.3s;
+
+    @include adpt ($bmob-r) {
+      width: 39px;
+      top: -10px;
+      height: 59px;
+      right: calc(50% - 80px);
+      transform: translateX(50%);
+    }
+
+    &_2 {
+      opacity: 0;
+    }
+  }
+
+  &__btn-link {
+    position: relative;
+    border-radius: 2vw;
+    background-color: #EEE;
+    text-align: center;
+    padding: 1.2vw calc(2vw + 3.5vw) 1.3vw 2vw;
+    font-size: 1.1vw;
+    line-height: 1.5;
+    text-align: center;
+    pointer-events: none;
+    color: #858585;
+    transition: background-color 0.3s, color 0.3s;
+
+    @include adpt ($bmob-r) {
+
+      padding: 18px;
+      padding-bottom: 20px;
+      padding-right: 90px;
+      font-size: 18px;
+      border-radius: 50px;
+      width: 100%;
+    }
+
+    &._active {
+      color: $white;
+      pointer-events: all;
+      background-color: $default;
+
+      & .thank__btn-link-img_1 {
+        opacity: 0;
+      }
+
+      & .thank__btn-link-img_2 {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn-link-img {
+    position: absolute;
+    top: -0.9vw;
+    right: 2vw;
+    width: 3.5vw;
+    object-fit: contain;
+    height: 4vw;
+    transition: opacity 0.3s;
+
+    @include adpt ($bmob-r) {
+      width: 53px;
+      height: 59px;
+      top: -10px;
+      right: calc(50% - 90px);
+      border-radius: 50px;
+      transform: translateX(50%);
+    }
+
+    &_2 {
+      opacity: 0;
+    }
+  }
+
+  &__animation {
+    position: relative;
+  }
+
+  &__animation-inner {
+    width: 100%;
+    height: 100%;
+
+    @include adpt ($bmob-r) {
+      display: none;
+    }
+  }
+
+  &__animation-mob {
+    display: none;
+
+    @include adpt ($bmob-r) {
+      display: block;
+
+      & img {
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__anim-img {
+    position: absolute;
+    object-fit: contain;
+    pointer-events: none;
+
+    &._1 {
+      width: calc(100% - 8vw);
+      height: calc(100% + 2vw);
+      top: -0.5vw;
+      left: 3.8vw;
+      z-index: 1;
+    }
+
+    &._2 {
+      width: 14vw;
+      height: 14vw;
+      top: 5vw;
+      left: 0;
+      z-index: 1;
+    }
+
+    &._3 {
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      width: 2.2vw;
+      height: 2.2vw;
+    }
+
+    &._4 {
+      width: calc(100% - 14vw);
+      height: calc(100% - 2vw);
+      top: 1vw;
+      z-index: 2;
+      right: 7vw;
+    }
+
+    &._5 {
+      z-index: 2;
+      width: 6.5vw;
+      right: 11vw;
+      top: -0.5vw;
+      height: 10vw;
+    }
+
+    &._6 {
+      z-index: 2;
+      bottom: 0;
+      left: 1.8vw;
+      width: 14.5vw;
+      height: 16vw;
+    }
+
+    &._7 {
+      z-index: 2;
+      width: 4vw;
+      height: 4vw;
+      left: -1vw;
+      top: 11vw;
+    }
+
+    &._8 {
+      z-index: 2;
+      width: 2vw;
+      height: 2vw;
+      top: 0;
+      left: 3vw;
+    }
+
+    &._9 {
+      z-index: 2;
+      width: 3vw;
+      height: 3vw;
+      right: 0;
+      top: 3vw;
+    }
+  }
+}
