@@ -1,0 +1,86 @@
+@include('components/_head.html')
+
+@include('components/_header.html')
+
+<main class="main">
+  <section class="thank number">
+    <div class="container">
+      <div class="thank__inner number__inner">
+        <div class="thank__left number__left">
+          <div class="thank__title title">
+            Благодарим
+            за публикацию <br> отзыва в Яндексе!
+          </div>
+          <div class="thank__text">
+            Мы рады, что Вы остались довольны сотрудничеством с нами. Проверьте правильность номера, на который будет
+            зачислено 500р.
+          </div>
+          <input class="number__input tel" type="text" placeholder="" value="8 800 566 54 54" name="phone-two">
+
+          <button class="thank__btn-copy number__btn" type="submit">
+            <span>Получить бонус за отзыв </span>
+            <img class="thank__btn-copy-img " src="images/plus.png" alt="alt">
+
+          </button>
+
+        </div>
+        <div class="thank__animation">
+          <div class="number__animation-inner">
+            <img class="number__anim-img _1" src="images/decor/t1.svg" alt="svg">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+@include('components/_footer.html')
+<script>
+  window.addEventListener('load', function () {
+    [].forEach.call(document.querySelectorAll('.tel'), function (input) {
+      var keyCode;
+
+      function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 ___ ___ __ __",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, ""),
+          new_value = matrix.replace(/[_\d]/g, function (a) {
+            return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+          });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+          i < 3 && (i = 2);
+          new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+          function (a) {
+            return "\\d{1," + a.length + "}"
+          }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+
+        if (!reg.test(this.value) || this.value.length < 4 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 4) this.value = ""
+      }
+      input.addEventListener("input", mask, false);
+      input.addEventListener("focus", mask, false);
+      input.addEventListener("blur", mask, false);
+      input.addEventListener("keydown", mask, false)
+
+    });
+  })
+</script>
+<script src="libs/jquery.min.js"></script>
+<script src="libs/anime.min.js"></script>
+<script src="js/anim.js" type="module"></script>
+<script src="js/main.js" type="module"></script>
+<script src="js/number.js" type="module"></script>
+
+</body>
+
+</html>

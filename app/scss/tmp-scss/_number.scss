@@ -1,0 +1,41 @@
+.number {
+  &__inner {
+    grid-template-columns: 32vw 1fr;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #C4C4C4;
+    font-size: 1.1vw;
+    line-height: 1.5;
+    outline: none;
+    border-radius: 0px 0.9vw 0.9vw 0.9vw;
+    padding: 1.3vw 1.8vw;
+    margin-bottom: 1.5vw;
+    transition: border-color 0.3s, color 0.3s;
+
+    &._error {
+      color: #FF4A4A;
+      border-color: #FFEAEA;
+    }
+  }
+
+  &__btn {
+    border-radius: 50px;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+
+    &._hide {
+      pointer-events: none;
+      background-color: #F5F5F5;
+      color: #696969;
+    }
+
+    & img {
+      width: 4vw;
+      height: 4vw;
+      right: calc(50% - 10vw);
+    }
+  }
+}

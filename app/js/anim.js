@@ -345,3 +345,12 @@ export let animationThank = () => {
 
   }
 }
+
+export let animationNumber = () => {
+  "use strict";
+  const windowInnerWidth = window.innerWidth
+
+  if (windowInnerWidth > 576){
+    
+  }
+}
