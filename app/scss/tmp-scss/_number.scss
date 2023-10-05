@@ -21,6 +21,17 @@
     }
   }
 
+  &__animation{
+    &::after{
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 10vw;
+      background-color: #F5F5F5;
+      right: -3.7vw;
+      top: 0;
+    }
+  }
   &__btn {
     border-radius: 50px;
     width: 100%;
@@ -36,6 +47,57 @@
       width: 4vw;
       height: 4vw;
       right: calc(50% - 10vw);
+    }
+  }
+  &__animation-inner{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 0 0 41%;
+    min-height: 44.5vw;
+    overflow: hidden;
+  }
+
+  &__anim-img {
+    position: absolute;
+    object-fit: contain;
+
+    &._1 {
+      width: calc(100% + 3.7vw);
+      top: 0;
+      height: auto;
+      max-width: initial;
+      left: 0;
+      z-index: 1;
+    }
+
+    &._2 {
+      width: 16.5vw;
+      height: 16.5vw;
+      top: 0;
+      z-index: 1;
+      left: 0;
+    }
+    &._3{
+      z-index: 4;
+      width: 40vw;
+      height: 24vw;
+      top: -3vw;
+      left: 8vw;
+    }
+    &._4{
+      z-index: 3;
+      width: 40vw;
+      bottom: 0;
+      height: 30vw;
+      left: 8vw;
+    }
+    &._5{
+      z-index: 2;
+      width: 20vw;
+      top: 10vw;
+      left: 10vw;
+      height: 25vw;
     }
   }
 }
