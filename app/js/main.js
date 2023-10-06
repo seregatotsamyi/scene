@@ -57,7 +57,7 @@ window.onload = function () {
       item.classList.remove('_error')
     })
     newProjectLabels[i].classList.add('_checked')
-    valueObj.newProject = document.querySelector('input[name="new-project"]:checked').value
+    valueObj.newProject = document.querySelector('input[name="newProject"]:checked').value
     validateAll(false)
   }
 
@@ -70,7 +70,7 @@ window.onload = function () {
   //inputs
   let phoneInput = document.querySelector('.form__input[name="phone"]')
   let reviewInput = document.querySelector('.form__input[name="reviews"]')
-  let reviewBadInput = document.querySelector('.form__input[name="reviews-bad"]')
+  let reviewBadInput = document.querySelector('.form__input[name="reviewsBad"]')
   let wishesInput = document.querySelector('.form__input[name="wishes"]')
 
   //inputs
@@ -144,7 +144,7 @@ window.onload = function () {
             break
           }
           case "newProject": {
-            if (document.querySelector('input[name="new-project"]:checked') === null) {
+            if (document.querySelector('input[name="newProject"]:checked') === null) {
               if (option) {
                 newProjectLabels.forEach((item) => {
                   item.classList.remove('_checked')
@@ -236,64 +236,86 @@ window.onload = function () {
 
   }
 
-  $('#form').on('submit', function (event) {
-    event.preventDefault();
 
-    let formData = $(this).serialize();
+  const URL_APP = "https://script.google.com/macros/s/AKfycby_eeTLAfpp7lELjnJVVXjKdY_7SRgj0iHRg0dTOuiWkiQMrKi3s0Q4XF-3aewsfY8Qww/exec"
 
+
+  const form = document.querySelector("#form");
+  // указываем адрес отправки формы (нужно только в начале примера)
+  form.action = URL_APP;
+
+
+  // навешиваем обработчик на отправку формы
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
     if (validateAll(true)) {
-      alert("Отправка успешна")
+
+      // собираем данные из элементов формы
+      let details = {
+        phone: phoneInput.value,
+        raiting: valueObj.rating,
+        reviews: reviewInput.value,
+        reviewsBad: reviewBadInput.value,
+        wishes: wishesInput.value,
+        newProject: valueObj.newProject,
+      };
+      console.log(details)
+
+      // подготавливаем данные для отправки
+      let formBody = [];
+      for (let property in details) {
+        // кодируем названия и значения параметров
+        let encodedKey = encodeURIComponent(property);
+        let encodedValue = encodeURIComponent(details[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
+      }
+
+      // склеиваем параметры в одну строку
+      formBody = formBody.join("&");
+      console.log(formBody)
+      // выполняем отправку данных в Google Apps
+      const result = await fetch(URL_APP, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          //cors: "no-cors", <- это неправильно
+          mode: "cors", //<- оставим по умолчанию
+          body: formBody,
+        })
+        .then((res) => {
+          res.json()
+          console.log(res)
+        })
+        .catch((err) => alert("Ошибка!"))
+      // .then((res) => console.log(res));
+
+      if (result.type === 'success') {
+        alert('Спасибо за заявку!')
+      }
+      if (result.type === 'error') {
+        alert(`Ошибка( ${result.errors}`)
+      }
       if (valueObj.rating > 3) {
         let reviews = reviewInput.value
         let phoneV = phoneInput.value
         localStorage.setItem("reviews_ls", reviews)
         localStorage.setItem("phone_ls", phoneV)
-        document.location.href = '/thank.html';
+        // document.location.href = '/thank.html';
       } else {
-        document.location.href = '/thank-two.html';
+        // document.location.href = '/thank-two.html';
       }
-
     } else {
       alert('Валидация')
     }
 
+  });
 
-    // $.ajax({
-    //   url: 'mail.php',
-    //   method: 'POST',
-    //   data: formData,
-    //   dataType: 'json',
-    //   encoding: true,
-    //   success: response => {
-    //     if (response == 1) {
-    //       step = 5;
-    //       quizNext();
-    //       $('#quiz-form')[0].reset();
-    //       window.location.href = '/thanks-quiz.html';
 
-    //     } else {
-    //       alert('Произошла ошибка');
-    //     }
-    //   },
-    //   error: function (jqXHR, exception) {
-    //     if (jqXHR.status === 0) {
-    //       alert('Not connect. Verify Network.');
-    //     } else if (jqXHR.status == 404) {
-    //       alert('Requested page not found (404).');
-    //     } else if (jqXHR.status == 500) {
-    //       alert('Internal Server Error (500).');
-    //     } else if (exception === 'parsererror') {
-    //       alert('Requested JSON parse failed.');
-    //     } else if (exception === 'timeout') {
-    //       alert('Time out error.');
-    //     } else if (exception === 'abort') {
-    //       alert('Ajax request aborted.');
-    //     } else {
-    //       alert('Uncaught Error. ' + jqXHR.responseText);
-    //     }
-    //   }
-    // });
-  })
+
+
+
+
   //logic form
 
   //mob-menu
