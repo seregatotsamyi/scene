@@ -1,6 +1,6 @@
 .thank {
   padding: 3vw 1vw;
-
+  opacity: 0;
   @include adpt ($bmob-r) {
     padding: 28px 0;
   }

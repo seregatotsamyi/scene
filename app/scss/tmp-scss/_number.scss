@@ -1,6 +1,10 @@
 .number {
   &__inner {
     grid-template-columns: 32vw 1fr;
+
+    @include adpt ($bmob-r) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__input {
@@ -15,14 +19,21 @@
     margin-bottom: 1.5vw;
     transition: border-color 0.3s, color 0.3s;
 
+    @include adpt ($bmob-r) {
+      padding: 18px 25px 20px;
+      font-size: 18px;
+      border-radius: 0px 10px 10px 10px;
+      margin-bottom: 27px;
+    }
+
     &._error {
       color: #FF4A4A;
       border-color: #FFEAEA;
     }
   }
 
-  &__animation{
-    &::after{
+  &__animation {
+    &::after {
       content: "";
       height: 100%;
       position: absolute;
@@ -30,8 +41,13 @@
       background-color: #F5F5F5;
       right: -3.7vw;
       top: 0;
+
+      @include adpt ($bmob-r) {
+        display: none;
+      }
     }
   }
+
   &__btn {
     border-radius: 50px;
     width: 100%;
@@ -47,15 +63,30 @@
       width: 4vw;
       height: 4vw;
       right: calc(50% - 10vw);
+      @include adpt ($bmob-r) {
+        width: 55px;
+        height: 55px;
+        right: calc(50% - 70px);
+      }
+    }
+    & span._mob{
+      @include adpt ($bmob-r) {
+        display: none;
+      }
     }
   }
-  &__animation-inner{
+
+  &__animation-inner {
     position: relative;
     height: 100%;
     width: 100%;
     border-radius: 0 0 0 41%;
     min-height: 44.5vw;
     overflow: hidden;
+
+    @include adpt ($bmob-r) {
+      display: none;
+    }
   }
 
   &__anim-img {
@@ -78,26 +109,56 @@
       z-index: 1;
       left: 0;
     }
-    &._3{
+
+    &._3 {
       z-index: 4;
       width: 40vw;
       height: 24vw;
       top: -3vw;
       left: 8vw;
     }
-    &._4{
+
+    &._4 {
       z-index: 3;
       width: 40vw;
       bottom: 0;
       height: 30vw;
       left: 8vw;
     }
-    &._5{
+
+    &._5 {
       z-index: 2;
       width: 20vw;
       top: 10vw;
       left: 10vw;
       height: 25vw;
     }
+  }
+
+  &__video {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__mob {
+    display: none;
+
+    @include adpt ($bmob-r) {
+      display: block;
+      position: relative;
+      aspect-ratio: 483/672;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__mob-img {
+    position: absolute;
+    width: calc(100% + 30px);
+    top: 0;
+    right: -30px;
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
   }
 }

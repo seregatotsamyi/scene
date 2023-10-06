@@ -229,6 +229,12 @@ export let animationThank = () => {
   const windowInnerWidth = window.innerWidth
 
   if (windowInnerWidth > 576) {
+    anime({
+      targets: '.thank',
+      opacity: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 300,
+    })
     let animBtn = anime({
       targets: '.thank__btn-copy-img_1',
       translateY: [-5, 5],
@@ -351,6 +357,11 @@ export let animationNumber = () => {
   const windowInnerWidth = window.innerWidth
 
   if (windowInnerWidth > 576){
-    
+    anime({
+      targets: '.thank',
+      opacity: [0, 1],
+      easing: 'easeInOutExpo',
+      duration: 300,
+    })
   }
 }
