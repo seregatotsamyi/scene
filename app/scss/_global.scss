@@ -1,103 +1,107 @@
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'gramatika', sans-serif;
-  font-weight: 400;
-  font-size: 1.5vw;
-  line-height: 1.5;
-  background-color: $white;
-  color: $default;
-  overflow-x: hidden;
-
-  @include adpt-mob (60) {
-    font-size: 0.95vw;
-  }
-
-  @include adpt ($bmob-r) {
-    font-size: 18px;
-  }
+    display: flex;
+    flex-direction: column;
+    font-family: "gramatika", sans-serif;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 1.5;
+    background-color: $white;
+    color: $default;
+    overflow-x: hidden;
+    @include adpt-mob(60) {
+        font-size: 0.95vw;
+    }
+    @include adpt($bmob-r) {
+        font-size: 18px;
+    }
 }
 
 .container {
-  padding: 0 2.7vw;
-
-  @include adpt ($bmob-r) {
-    padding: 0 30px;
-  }
+    padding: 0 2.7vw;
+    @include adpt($bmob-r) {
+        padding: 0 30px;
+    }
 }
 
 .sr-only {
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10000;
+    display: none;
 }
 
 .logo {
-  width: 100%;
-  max-width: 80px;
-
-  &__img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+    max-width: 80px;
+    &__img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 .main {
-  @include adpt ($tab-r) {
-    padding-top: 2.5vw;
-  }
-
-  @include adpt ($bmob-r) {
-    padding-top: 0;
-  }
+    @include adpt($tab-r) {
+        padding-top: 2.5vw;
+    }
+    @include adpt($bmob-r) {
+        padding-top: 0;
+    }
 }
 
 .btn {
-  cursor: pointer;
-  text-align: center;
-  border-radius: 0px 0.625em 0.625em 0.625em;
-  border: 0.125em solid #EEE;
-  font-size: 0.9em;
-  padding: 0.75em 1.25em;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0px 0.625em 0.625em 0.625em;
+    border: 0.125em solid #eee;
+    font-size: 0.9em;
+    padding: 0.75em 1.25em;
 }
 
 .title {
-  line-height: 1.05;
-  font-size: 3.2vw;
-  letter-spacing: -0.1vw;
-
-  @include adpt ($bmob-r) {
-    font-size: 33px;
-    letter-spacing: -0.33px;
-    line-height: 1.1;
-  }
+    line-height: 1.05;
+    font-size: 3.2vw;
+    letter-spacing: -0.1vw;
+    @include adpt($bmob-r) {
+        font-size: 33px;
+        letter-spacing: -0.33px;
+        line-height: 1.1;
+    }
 }
 
 .subtitle {
-  line-height: 1.3;
-  letter-spacing: -0.08vw;
-  font-size: 2vw;
-
-  @include adpt ($bmob-r) {
-    font-size: 18px;
-    line-height: 1.4;
-    letter-spacing: normal;
-  }
+    line-height: 1.3;
+    letter-spacing: -0.08vw;
+    font-size: 2vw;
+    @include adpt($bmob-r) {
+        font-size: 18px;
+        line-height: 1.4;
+        letter-spacing: normal;
+    }
 }
 
 ._fixed {
-  overflow: hidden;
+    overflow: hidden;
 }
